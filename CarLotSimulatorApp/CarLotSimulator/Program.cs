@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 
 namespace CarLotSimulator
 {
@@ -18,11 +19,16 @@ namespace CarLotSimulator
             //Set the properties for each of the cars
             //Call each of the methods for each car
 
+            CarLot myCarLot = new CarLot();
+
+
             Car car1 = new Car();
             car1.Year = 2016;
             car1.Make = "Toyota";
             car1.Model = "Camry";
             car1.IsDriveable = true;
+
+            myCarLot.CarList.Add(car1);
 
             car1.MakeEngineNoise("Quiet whirr");
             car1.MakeHonkNoise("Beep beep");
@@ -36,6 +42,8 @@ namespace CarLotSimulator
             car2.MakeEngineNoise("Loud and obnoxious");
             car2.MakeHonkNoise("BWAAA BWAAAA");
 
+            myCarLot.CarList.Add(car2);
+
             Console.WriteLine(car2.EngineNoise);
             Console.WriteLine(car2.HonkNoise);
             Console.WriteLine("------------------------");
@@ -44,6 +52,8 @@ namespace CarLotSimulator
 
             car3.MakeEngineNoise("BRRRRRRRRR");
             car3.MakeHonkNoise("Honk honk");
+
+            myCarLot.CarList.Add(car3);
 
             Console.WriteLine(car3.EngineNoise);
             Console.WriteLine(car3.HonkNoise);
@@ -58,6 +68,15 @@ namespace CarLotSimulator
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+
+            foreach (var car in myCarLot.CarList)
+            {
+                Console.WriteLine($"Year: {car.Year}");
+                Console.WriteLine($"Make: {car.Make}");
+                Console.WriteLine($"Model: {car.Model}");
+                Console.WriteLine();
+                Console.WriteLine();
+            }
         }
     }
 }
