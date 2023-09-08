@@ -19,9 +19,6 @@ namespace CarLotSimulator
             //Set the properties for each of the cars
             //Call each of the methods for each car
 
-            CarLot myCarLot = new CarLot();
-
-
             Car car1 = new Car();
             car1.Year = 2016;
             car1.Make = "Toyota";
@@ -30,11 +27,10 @@ namespace CarLotSimulator
             car1.EngineNoise = "Quiet whirr";
             car1.HonkNoise = "Beep beep";
 
-            CarLot.AddCar();
 
             car1.SetEngineNoise(car1.EngineNoise);
             car1.SetHonkNoise(car1.HonkNoise);
-
+            CarLot.AddCar();
             Console.WriteLine(car1.EngineNoise);
             Console.WriteLine(car1.HonkNoise);
             Console.WriteLine($"There is {CarLot.numberOfCars} car in the lot");
@@ -54,9 +50,9 @@ namespace CarLotSimulator
 
             Car car3 = new Car(2023, "Dodge", "Challenger", true, "BRRRRRRRRR", "Honk honk");
 
-            CarLot.AddCar();
             Console.WriteLine(car3.EngineNoise);
             Console.WriteLine(car3.HonkNoise);
+            CarLot.AddCar();
             Console.WriteLine($"There are {CarLot.numberOfCars} cars in the lot");
             Console.WriteLine("------------------------");
             //*************BONUS*************//
